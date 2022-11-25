@@ -9,4 +9,7 @@
     <data name="title_page_project" xml:space="preserve">
         <value>Draft</value>
     </data>
+    <data name="title_page_posts" xml:space="preserve">
+        <value>Home</value>
+    </data>
 </root>

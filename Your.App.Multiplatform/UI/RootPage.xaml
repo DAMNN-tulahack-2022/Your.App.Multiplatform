@@ -6,6 +6,9 @@
     xmlns:local="clr-namespace:Your.App">
 
     <TabBar>
+        <Tab Title="{Binding PostsLocalizedTitle}" Icon="users">
+            <ShellContent ContentTemplate="{DataTemplate local:PostsPage}" />
+        </Tab>
         <Tab Title="{Binding ProjectLocalizedTitle}" Icon="users">
             <ShellContent ContentTemplate="{DataTemplate local:ProjectPage}" />
         </Tab>
