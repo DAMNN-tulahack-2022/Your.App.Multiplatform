@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="title_page_profile" xml:space="preserve">
+        <value>Profile</value>
+    </data>
+    <data name="title_page_search" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="title_page_project" xml:space="preserve">
+        <value>Draft</value>
+    </data>
+</root>

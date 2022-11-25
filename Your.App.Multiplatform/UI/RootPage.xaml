@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Your.App.RootPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Your.App">
+
+    <TabBar>
+        <Tab Title="{Binding ProjectLocalizedTitle}" Icon="users">
+            <ShellContent ContentTemplate="{DataTemplate local:ProjectPage}" />
+        </Tab>
+        <Tab Title="{Binding ProfileLocalizedTitle}" Icon="users">
+            <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" />
+        </Tab>
+        <Tab Title="{Binding SearchLocalizedTitle}" Icon="users">
+            <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

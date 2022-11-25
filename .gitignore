@@ -1,0 +1,6 @@
+/**/[Bb]in
+/**/[Oo]bj
+tools/
+Artifacts/
+.vscode/
+/**/.DS_Store
