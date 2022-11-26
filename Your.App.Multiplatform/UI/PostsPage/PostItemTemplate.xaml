@@ -1,29 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-        x:Class="Your.App.PostItem" Margin="16,8" BackgroundColor="#FFFFFF" 
-        CornerRadius="24" HasShadow="False">
-    <VerticalStackLayout Margin="12,0" Spacing="12">
+        xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+        x:Class="Your.App.PostItemTemplate" Margin="16,8" CornerRadius="20" HasShadow="False">
+    <VerticalStackLayout Margin="2,0" Spacing="12">
         <HorizontalStackLayout>
             <Frame CornerRadius="16" HasShadow="False" IsClippedToBounds="True" HeightRequest="32" WidthRequest="32">
-                <Image Source="https://avatars.githubusercontent.com/u/48021947?v=4" 
+                <Image Source="{Binding Photo}" 
                        Aspect="AspectFill"
                        HeightRequest="32"
-                       WidthRequest="32" />
+                       WidthRequest="32">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding Photo}" CacheValidity="1" CachingEnabled="true"/>
+                    </Image.Source>
+                </Image>
             </Frame>
             <VerticalStackLayout Margin="12,0,0,0">
-                <Label Text="Андрей Кузнецов" 
+                <Label Text="{Binding Creator}" 
                        Style="{StaticResource AccentTextAppearance}" />
-                <Label Text="2 hours age"
+                <Label Text="{Binding DateString}"
                        Style="{StaticResource CaptionTextAppearance}" />
             </VerticalStackLayout>
         </HorizontalStackLayout>
 
-        <Label Text="Топ-10 унижений на практике по физике."
+        <Label Text="{Binding Title}"
                Style="{StaticResource LabelTitleAppearance}"/>
 
-        <Label Text="Вы уже знаете, как популярны унижения в университетах, вот и я не стал исключением. Покажу топ 10 лучших сособов унизить студента..."
+        <Label Text="{Binding Body}"
                MaxLines="4"
                Style="{StaticResource LabelTextAppearance}" />
+
+        <dxe:ChipGroup ItemsSource="{Binding Languages}"
+            Style="{StaticResource ChipGroupAppearance}"/>
     </VerticalStackLayout>
 </Frame>

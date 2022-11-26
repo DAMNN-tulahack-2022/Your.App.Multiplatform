@@ -35,6 +35,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Your.Network\Your.Network.csproj" />
+		<PackageReference Include="DevExpress.Maui.Editors" Version="22.2.2-beta" />
 	</ItemGroup>
 
 </Project>

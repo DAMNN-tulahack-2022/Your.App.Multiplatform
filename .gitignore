@@ -4,3 +4,4 @@ tools/
 Artifacts/
 .vscode/
 /**/.DS_Store
+nuget.config

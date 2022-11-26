@@ -9,13 +9,12 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <ScrollView>
-            <VerticalStackLayout>
-                <local:PostItem />
-                <local:PostItem />
-                <local:PostItem />
-                <local:PostItem />
-            </VerticalStackLayout>
-        </ScrollView>
+        <CollectionView ItemsSource="{Binding Posts}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid><local:PostItemTemplate/></Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ContentPage.Content>
 </ContentPage>

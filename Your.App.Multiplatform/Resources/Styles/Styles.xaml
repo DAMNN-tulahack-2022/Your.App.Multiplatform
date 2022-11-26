@@ -2,7 +2,8 @@
 <?xaml-comp compile="true" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
         <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
@@ -20,6 +21,11 @@
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}" />
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
     </Style>
 
     <Style x:Key="LabelTitleAppearance" TargetType="Label">
@@ -47,6 +53,15 @@
         <Setter Property="FontSize" Value="14"/>
     </Style>
 
+    <Style x:Key="AccentTitleTextAppearance" TargetType="Label">
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+
     <Style x:Key="CaptionTextAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource White}}" />
@@ -54,6 +69,14 @@
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
         <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+    <Style x:Key="ChipGroupAppearance" TargetType="dxe:ChipGroup">
+        <Setter Property="ChipPadding" Value="18,6"/>
+        <Setter Property="ChipTextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        <Setter Property="ChipBorderColor" Value="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}"/>
+        <Setter Property="ChipCornerRadius" Value="16"/>
+        <Setter Property="Padding" Value="0"/>
     </Style>
 
 <!-- Not used -->
