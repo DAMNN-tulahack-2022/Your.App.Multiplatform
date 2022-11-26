@@ -8,5 +8,8 @@ namespace Your.Network.Models {
         [JsonPropertyName("body")] public string? Body { get; set; }
         [JsonPropertyName("languages")] public List<string>? Languages { get; set; }
         [JsonPropertyName("users")] public List<int>? Users { get; set; }
+
+        [JsonIgnore] public string? DescriptionTitle { get; set; }
+        [JsonIgnore] public string? LanguagesTitle { get; set; }
     }
 }

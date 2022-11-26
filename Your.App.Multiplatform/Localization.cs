@@ -1,7 +1,7 @@
 namespace Your.App;
 
 public static class Localization {
-    private static System.Resources.ResourceManager? instance;
+    private static System.Resources.ResourceManager instance;
     public static System.Resources.ResourceManager Instance {
         get {
             if (instance == null) {

@@ -12,4 +12,11 @@
     <data name="title_page_posts" xml:space="preserve">
         <value>Главная</value>
     </data>
+
+    <data name="title_common_description" xml:space="preserve">
+        <value>Описание проекта</value>
+    </data>
+    <data name="title_common_stack_tech" xml:space="preserve">
+        <value>Стек</value>
+    </data>
 </root>
