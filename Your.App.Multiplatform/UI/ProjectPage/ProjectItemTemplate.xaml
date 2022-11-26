@@ -8,16 +8,17 @@
         <Label Text="{Binding Title}"
                Style="{StaticResource LabelTitleAppearance}"/>
 
-        <Label Text="{Binding DescriptionTitle}"
-               Style="{StaticResource AccentTitleTextAppearance}"/>
-
-        <Label Text="{Binding Body}"
+        <Label Text="{Binding Description}"
                Style="{StaticResource LabelTextAppearance}" />
-
-        <Label Text="{Binding LanguagesTitle}"
-               Style="{StaticResource AccentTitleTextAppearance}"/>
 
         <dxe:ChipGroup ItemsSource="{Binding Languages}"
             Style="{StaticResource ChipGroupAppearance}"/>
+
+        <BoxView Style="{StaticResource DividerAppearance}" />
+
+        <Label Text="Assignees"
+               Style="{StaticResource AccentTitleTextAppearance}"/>
+
+        <VerticalStackLayout x:Name="container" Spacing="16"/>
     </VerticalStackLayout>
 </Frame>

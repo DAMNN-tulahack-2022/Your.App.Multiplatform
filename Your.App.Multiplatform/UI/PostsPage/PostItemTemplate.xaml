@@ -3,22 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
         x:Class="Your.App.PostItemTemplate" Margin="16,8" CornerRadius="20" HasShadow="False">
+     <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTapped"/>
+    </Frame.GestureRecognizers>
     <VerticalStackLayout Margin="2,0" Spacing="12">
         <HorizontalStackLayout>
             <Frame CornerRadius="16" HasShadow="False" IsClippedToBounds="True" HeightRequest="32" WidthRequest="32">
-                <Image Source="{Binding Photo}" 
+                <Image Source="{Binding CreatorPhoto}" 
                        Aspect="AspectFill"
                        HeightRequest="32"
-                       WidthRequest="32">
-                    <Image.Source>
-                        <UriImageSource Uri="{Binding Photo}" CacheValidity="1" CachingEnabled="true"/>
-                    </Image.Source>
-                </Image>
+                       WidthRequest="32"/>
             </Frame>
             <VerticalStackLayout Margin="12,0,0,0">
-                <Label Text="{Binding Creator}" 
+                <Label Text="{Binding CreatorName}" 
                        Style="{StaticResource AccentTextAppearance}" />
-                <Label Text="{Binding DateString}"
+                <Label Text="{Binding Date}"
                        Style="{StaticResource CaptionTextAppearance}" />
             </VerticalStackLayout>
         </HorizontalStackLayout>

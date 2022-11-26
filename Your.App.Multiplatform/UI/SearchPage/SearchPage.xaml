@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:local="clr-namespace:Your.App"
              x:Class="Your.App.SearchPage">
 
-    <CollectionView ItemsSource="{Binding Posts}">
+    <Shell.TitleView>
+        <dxe:TextEdit PlaceholderText="Search user" TextChanged="OnTextChanged" StartIcon="search_nav"/>
+    </Shell.TitleView>
+    <CollectionView ItemsSource="{Binding ActualUsers}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <VerticalStackLayout Padding="16, 8">
-                    <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold"/>
-                    <Label Text="{Binding Body}" FontSize="16"/>
-                </VerticalStackLayout>
+                <Grid Padding="20,12" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
+                    <local:UserItemTemplate />
+                </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

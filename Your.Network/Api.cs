@@ -5,7 +5,7 @@ namespace Your.Network {
     public static class Api {
         public static async void Get<TResult>(ApiRequest<TResult> request, IRequestCallback<TResult>? callback = null, int retryCount = 3) {
             TResult? response = default;
-            
+
             do {
                 try {
                     response = await request.Execute();

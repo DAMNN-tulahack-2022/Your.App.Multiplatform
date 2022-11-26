@@ -10,4 +10,8 @@ public partial class SearchPage : ContentPage {
 
 		BindingContext = ViewModel;
 	}
+
+	private void OnTextChanged(object sender, EventArgs e) {
+		ViewModel.FilterUsers(((DevExpress.Maui.Editors.TextEdit)sender).Text);
+	}
 }

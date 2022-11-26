@@ -1,10 +1,11 @@
 using System.Text.Json.Serialization;
+using System.Collections.Generic;
 
 namespace Your.Network.Models {
-
-    public class Photo {
-        [JsonPropertyName("photo_200")] public string? Photo200 { get; set; }
-        [JsonPropertyName("photo_100")] public string? Photo100 { get; set; }
-        [JsonPropertyName("photo_50")] public string? Photo50 { get; set; }
+    public class Data {
+        [JsonPropertyName("users")] public List<User>? Users { get; set; }
+        [JsonPropertyName("projects")] public List<Project>? Projects { get; set; }
+        [JsonPropertyName("skills")] public List<Skill>? Skills { get; set; }
+        [JsonPropertyName("articles")] public List<Article>? Articles { get; set; }
     }
 }
