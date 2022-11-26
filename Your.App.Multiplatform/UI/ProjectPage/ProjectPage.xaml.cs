@@ -1,9 +1,10 @@
 ﻿namespace Your.App;
 
 public partial class ProjectPage : ContentPage {
-	private ProjectPageViewModel ViewModel;
+	private readonly ProjectPageViewModel ViewModel;
 
 	public ProjectPage() {
+		Title = Localization.Instance.GetString("title_page_project");
 		ViewModel = new ProjectPageViewModel();
 
 		InitializeComponent();

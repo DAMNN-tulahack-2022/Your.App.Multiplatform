@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="Your.App.PostItem" Margin="16,8" BackgroundColor="#FFFFFF" 
+        CornerRadius="24" HasShadow="False">
+    <VerticalStackLayout Margin="12,0" Spacing="12">
+        <HorizontalStackLayout>
+            <Frame CornerRadius="16" HasShadow="False" IsClippedToBounds="True" HeightRequest="32" WidthRequest="32">
+                <Image Source="https://avatars.githubusercontent.com/u/48021947?v=4" 
+                       Aspect="AspectFill"
+                       HeightRequest="32"
+                       WidthRequest="32" />
+            </Frame>
+            <VerticalStackLayout Margin="12,0,0,0">
+                <Label Text="Андрей Кузнецов" 
+                       Style="{StaticResource AccentTextAppearance}" />
+                <Label Text="2 hours age"
+                       Style="{StaticResource CaptionTextAppearance}" />
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <Label Text="Топ-10 унижений на практике по физике."
+               Style="{StaticResource LabelTitleAppearance}"/>
+
+        <Label Text="Вы уже знаете, как популярны унижения в университетах, вот и я не стал исключением. Покажу топ 10 лучших сособов унизить студента..."
+               MaxLines="4"
+               Style="{StaticResource LabelTextAppearance}" />
+    </VerticalStackLayout>
+</Frame>

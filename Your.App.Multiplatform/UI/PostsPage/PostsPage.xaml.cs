@@ -5,6 +5,7 @@ public partial class PostsPage : ContentPage {
 
 	public PostsPage() {
 		ViewModel = new PostsPageViewModel();
+		Title = Localization.Instance.GetString("title_page_posts");
 
 		InitializeComponent();
 		BindingContext = ViewModel;

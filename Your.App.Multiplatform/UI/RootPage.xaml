@@ -6,16 +6,16 @@
     xmlns:local="clr-namespace:Your.App">
 
     <TabBar>
-        <Tab Title="{Binding PostsLocalizedTitle}" Icon="users">
+        <Tab Title="{Binding PostsLocalizedTitle}" Icon="home">
             <ShellContent ContentTemplate="{DataTemplate local:PostsPage}" />
         </Tab>
-        <Tab Title="{Binding ProjectLocalizedTitle}" Icon="users">
-            <ShellContent ContentTemplate="{DataTemplate local:ProjectPage}" />
-        </Tab>
-        <Tab Title="{Binding ProfileLocalizedTitle}" Icon="users">
+        <Tab Title="{Binding SearchLocalizedTitle}" Icon="search">
             <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" />
         </Tab>
-        <Tab Title="{Binding SearchLocalizedTitle}" Icon="users">
+        <Tab Title="{Binding ProjectLocalizedTitle}" Icon="project">
+            <ShellContent ContentTemplate="{DataTemplate local:ProjectPage}" />
+        </Tab>
+        <Tab Title="{Binding ProfileLocalizedTitle}" Icon="profile">
             <ShellContent ContentTemplate="{DataTemplate local:ProfilePage}" />
         </Tab>
     </TabBar>

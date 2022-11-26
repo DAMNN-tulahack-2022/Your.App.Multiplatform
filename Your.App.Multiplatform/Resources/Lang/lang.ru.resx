@@ -7,6 +7,9 @@
         <value>Поиск</value>
     </data>
     <data name="title_page_project" xml:space="preserve">
-        <value>Проект</value>
+        <value>Проекты</value>
+    </data>
+    <data name="title_page_posts" xml:space="preserve">
+        <value>Главная</value>
     </data>
 </root>
