@@ -1,8 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
              x:Class="Your.App.ProfilePage">
-    <VerticalStackLayout>
-    
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Frame x:Name="frame" CornerRadius="48" Margin="-16" Padding="0" HasShadow="False">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="32,32,32,16">
+                        <Frame CornerRadius="70" HasShadow="False" IsClippedToBounds="True" HeightRequest="140" WidthRequest="140">
+                            <Image Source="{Binding PhotoUrl}" 
+                                    Aspect="AspectFill"
+                                    HeightRequest="140"
+                                    WidthRequest="140"/>
+                        </Frame>
+                        <VerticalStackLayout Margin="24,0,0,0" VerticalOptions="Center">
+                            <Label Text="{Binding FullName}" 
+                                    Style="{StaticResource AccentTitleTextAppearance}" />
+                            <Label Text="{Binding Role}"
+                                    Style="{StaticResource CaptionTitleAppearance}" />
+                            <HorizontalStackLayout Margin="0,24,0,0">
+                                <dxe:Chip Text="{Binding Experience}"
+                                    Style="{StaticResource ChipAppearance}"/>
+                                <Image Source="up" WidthRequest="20" HeightRequest="20" Margin="16,0,0,0"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+
+                    <Grid ColumnDefinitions="*,1,*,1,*" RowDefinitions="Auto,Auto" Margin="32,16">
+                        <Label Text="{Binding ProjectCount}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center"
+                               Style="{StaticResource AccentTitleTextAppearance}" />
+                        <Label Text="{Binding ReadCount}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"
+                               Style="{StaticResource AccentTitleTextAppearance}" />
+                        <Label Text="0" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="Center"
+                               Style="{StaticResource AccentTitleTextAppearance}" />
+
+                        <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="0,8"
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}" />
+                        <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Margin="0,8"
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}" />
+
+                        <Label Text="Projects" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center"
+                               Style="{StaticResource CaptionTitleAppearance}"/>
+                        <Label Text="Articles&#13;&#10;readed" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center"
+                               Style="{StaticResource CaptionTitleAppearance}"/>
+                        <Label Text="Articles&#13;&#10;created" Grid.Row="1" Grid.Column="4" HorizontalTextAlignment="Center"
+                               Style="{StaticResource CaptionTitleAppearance}"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

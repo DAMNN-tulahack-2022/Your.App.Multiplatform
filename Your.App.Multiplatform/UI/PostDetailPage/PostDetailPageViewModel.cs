@@ -5,10 +5,7 @@ using Your.Network;
 
 namespace Your.App;
 
-[QueryProperty(nameof(PostId), "post_id")]
 public class PostDetailPageViewModel: ObservableModel {
-    public string PostId {get; set; }
-
     private string title;
     public string Title {
         get => this.title;
@@ -21,20 +18,20 @@ public class PostDetailPageViewModel: ObservableModel {
         set => SetProperty(ref this.body, value, nameof(Body));
     }
 
-    public PostDetailPageViewModel() {
-        FetchArticles();
+    public PostDetailPageViewModel(string id) {
+        FetchArticles(id);
         MarkAsRead();
     }
 
 
     private void MarkAsRead() {
-        var t = 10;
     }
-    private void FetchArticles() {
+    
+    private void FetchArticles(string id) {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
                 var posts = result.Articles.ConvertAll(it => new PostItem(it, result.Users, result.Skills));
-                var currentPost = posts.SingleOrDefault(p => p.Id.Equals(PostId));
+                var currentPost = posts.SingleOrDefault(p => p.Id.Equals(id));
 
                 Title = currentPost.Title;
                 Body = currentPost.Body;

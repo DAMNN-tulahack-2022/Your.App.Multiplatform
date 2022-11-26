@@ -2,6 +2,9 @@
 <VerticalStackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="Your.App.UserItemTemplate">
+    <VerticalStackLayout.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTapped"/>
+    </VerticalStackLayout.GestureRecognizers>
 
     <HorizontalStackLayout>
         <Frame CornerRadius="20" HasShadow="False" IsClippedToBounds="True" HeightRequest="40" WidthRequest="40">

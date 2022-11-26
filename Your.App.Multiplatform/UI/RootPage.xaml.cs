@@ -6,5 +6,6 @@ public partial class RootPage : Shell {
 		BindingContext = new RootPageViewModel();
 
 		Routing.RegisterRoute("postdetail", typeof(PostDetailPage));
+		Routing.RegisterRoute("userdetail", typeof(ProfilePage));
 	}
 }
