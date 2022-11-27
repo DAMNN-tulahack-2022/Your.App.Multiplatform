@@ -3,11 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Your.App.PostDetailPage"
              Title="{Binding Title}">
-    <ScrollView BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}">
-        <VerticalStackLayout>
-            <Label Style="{StaticResource LabelTextAppearance}"
-                   Text="{Binding Body}" 
-                   Margin="16"/>
+    <ScrollView BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}">
+        <VerticalStackLayout Margin="24,8">
+            <Frame CornerRadius="30" HasShadow="False" IsClippedToBounds="True" 
+                   HeightRequest="60" WidthRequest="60" Margin="0,16,0,0">
+                <Image Source="{Binding Photo}" 
+                        Aspect="AspectFill"
+                        HeightRequest="60"
+                        WidthRequest="60"/>
+                </Frame>
+
+                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" Margin="0,4,0,0"
+                       Style="{StaticResource AccentTextAppearance}" />
+                <Label Text="{Binding Date}" HorizontalTextAlignment="Center"
+                       Style="{StaticResource CaptionTextAppearance}" />
+            
+            <Label Style="{StaticResource LabelTextAppearance}" Margin="0,24,0,0"
+                   Text="{Binding Body}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

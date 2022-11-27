@@ -20,4 +20,10 @@ public partial class ProfilePage : ContentPage {
 		}
 		viewModel.FetchUsers(UserId);
     }
+
+	private async void OnIconTap(object sender, EventArgs e) {
+		var exp = viewModel.Grade.Experience - viewModel.ExperienceCount;
+		
+		await DisplayAlert($"Level Up to {viewModel.Grade.Label}", $"You need at least {exp} more exp", "OK");
+	}
 }

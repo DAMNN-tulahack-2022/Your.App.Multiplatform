@@ -7,5 +7,6 @@ namespace Your.Network.Models {
         [JsonPropertyName("projects")] public List<Project>? Projects { get; set; }
         [JsonPropertyName("skills")] public List<Skill>? Skills { get; set; }
         [JsonPropertyName("articles")] public List<Article>? Articles { get; set; }
+        [JsonPropertyName("grades")] public List<Grade>? Grades { get; set; }
     }
 }

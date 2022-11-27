@@ -9,7 +9,7 @@ public class ProjectItem {
     public List<User> Contributors { get; set; }
 
     public ProjectItem(Project inner, List<User> users, List<Skill> skills) {
-        Contributors = users.Where(u => inner.UsersIds.Contains(u.Id)).ToList();
+        Contributors = users.Where(u => inner.UserIds.Contains(u.Id)).ToList();
         Languages = skills.Where(s => inner.SkillsIds.Contains(s.Id)).ToList().ConvertAll(s => s.Label);
         Title = inner.Title;
         Description = inner.Description;

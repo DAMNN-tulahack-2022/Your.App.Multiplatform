@@ -19,4 +19,7 @@
     <data name="title_common_stack_tech" xml:space="preserve">
         <value>Стек</value>
     </data>
+    <data name="title_common_create_post" xml:space="preserve">
+        <value>Новая статья</value>
+    </data>
 </root>

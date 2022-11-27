@@ -18,7 +18,7 @@ public class ProjectPageViewModel: ObservableModel {
     public void FetchProjects(int userId) {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
-                var project = result.Projects.FirstOrDefault(it => it.UsersIds?.Contains(userId) == true);
+                var project = result.Projects.FirstOrDefault(it => it.UserIds?.Contains(userId) == true);
                 if (project == null)
                     return;
 

@@ -5,7 +5,7 @@
              x:Class="Your.App.PostsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="add" />
+        <ToolbarItem IconImageSource="add" Clicked="OnAddClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

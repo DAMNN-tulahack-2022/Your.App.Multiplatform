@@ -22,7 +22,11 @@
                             <HorizontalStackLayout Margin="0,24,0,0">
                                 <dxe:Chip Text="{Binding Experience}"
                                     Style="{StaticResource ChipAppearance}"/>
-                                <Image Source="up" WidthRequest="20" HeightRequest="20" Margin="16,0,0,0"/>
+                                <Image Source="up" WidthRequest="20" HeightRequest="20" Margin="16,0,0,0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnIconTap"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </HorizontalStackLayout>
                         </VerticalStackLayout>
                     </HorizontalStackLayout>
@@ -36,9 +40,9 @@
                                Style="{StaticResource AccentTitleTextAppearance}" />
 
                         <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="0,8"
-                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}" />
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource PrimaryTransparent}}" />
                         <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Margin="0,8"
-                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}" />
+                                 BackgroundColor="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource PrimaryTransparent}}" />
 
                         <Label Text="Projects" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center"
                                Style="{StaticResource CaptionTitleAppearance}"/>

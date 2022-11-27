@@ -30,6 +30,8 @@ public class ProfilePageViewModel: ObservableModel {
         set => SetProperty(ref this.experience, value, nameof(Experience));
     }
 
+    public int ExperienceCount { get; set; }
+
     private string projectCount;
     public string ProjectCount {
         get => this.projectCount;
@@ -42,6 +44,8 @@ public class ProfilePageViewModel: ObservableModel {
         set => SetProperty(ref this.readCount, value, nameof(ReadCount));
     }
 
+    public Grade Grade { get; set; }
+
     public ProfilePageViewModel() {
     }
 
@@ -49,12 +53,21 @@ public class ProfilePageViewModel: ObservableModel {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
                 var user = result.Users.SingleOrDefault(u => u.Id.Equals(id));
+                if (user == null) {
+		            CredentialStorage.ClearToken();
+                }
+                ExperienceCount = user.TotalExperience;
+                
                 PhotoUrl = user.AvatarUrl;
                 FullName = user.FullName;
                 Role = user.Role;
-                Experience = user.TotalExperience.ToString() + " exp";
+                Experience = ExperienceCount.ToString() + " exp";
                 ProjectCount = user.CompletedProjectsId?.Count.ToString() ?? "0";
                 ReadCount = user.ViewedPostsIds.Count.ToString();
+
+                if (result.Grades?.Count == 0) return;
+
+                Grade = result.Grades.FirstOrDefault(g => g.Experience > ExperienceCount);
             })
             .OnError(reason => {})
         );

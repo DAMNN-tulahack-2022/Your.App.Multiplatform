@@ -11,6 +11,9 @@ internal static class CredentialStorage {
         await SecureStorage.Default.SetAsync(TokenAlias, token);
     }
     public static void ClearToken() {
+#if __IOS__
+        return;
+#endif
         SecureStorage.Default.Remove(TokenAlias);
     }
     public static string ReadToken() {

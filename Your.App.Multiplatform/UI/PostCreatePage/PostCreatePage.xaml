@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:local="clr-namespace:Your.App"
+             x:Class="Your.App.PostCreatePage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}">
+
+       <VerticalStackLayout Margin="24" Spacing="16">
+              <dxe:TextEdit x:Name="titleField" PlaceholderText="Title" ClearIconVisibility="Never"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
+
+              <dxe:MultilineEdit x:Name="bodyField" HeightRequest="200" PlaceholderText="Write something..."
+                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
+
+              <Button Text="Publish" Margin="48,16" Clicked="OnPublishClicked" CornerRadius="16"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+       </VerticalStackLayout>
+
+</ContentPage>

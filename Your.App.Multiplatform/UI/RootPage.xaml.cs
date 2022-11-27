@@ -7,5 +7,6 @@ public partial class RootPage : Shell {
 
 		Routing.RegisterRoute("postdetail", typeof(PostDetailPage));
 		Routing.RegisterRoute("userdetail", typeof(ProfilePage));
+		Routing.RegisterRoute("postcreate", typeof(PostCreatePage));
 	}
 }

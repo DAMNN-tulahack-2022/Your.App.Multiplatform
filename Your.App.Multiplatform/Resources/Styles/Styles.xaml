@@ -6,37 +6,49 @@
     xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
 
     <Style TargetType="Shell" ApplyToDerivedTypes="True">
-        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
-        <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource White}}" />
-        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-        <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={StaticResource Primary}, Default={StaticResource Primary}}" />
+        <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
         <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray200}}" />
         <Setter Property="Shell.NavBarHasShadow" Value="False" />
-        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray200}}" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray300}}" />
     </Style>
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
     </Style>
 
     <Style TargetType="Frame">
         <Setter Property="HasShadow" Value="False"/>
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
     </Style>
 
     <Style TargetType="dxe:TextEdit">
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource White}}" />
-        <Setter Property="StartIconColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource White}}" />
-        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+        <Setter Property="StartIconColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray400}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray300}}" />
         <Setter Property="TextFontAttributes" Value="Bold"/>
+        <Setter Property="TextFontFamily" Value="OpenSansSemibold"/>
+        <Setter Property="TextFontSize" Value="15"/>
+        <Setter Property="CornerRadius" Value="20"/>
+        <Setter Property="FocusedBorderColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="Transparent"/>
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <Style TargetType="dxe:MultilineEdit">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
+        <Setter Property="StartIconColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray400}}" />
+        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray300}}" />
         <Setter Property="TextFontFamily" Value="OpenSansSemibold"/>
         <Setter Property="TextFontSize" Value="14"/>
         <Setter Property="CornerRadius" Value="20"/>
-       
+        <Setter Property="ClearIconVisibility" Value="Never"/>
         <Setter Property="FocusedBorderColor" Value="Transparent" />
         <Setter Property="BorderColor" Value="Transparent"/>
         <Setter Property="BackgroundColor" Value="Transparent" />
@@ -44,7 +56,7 @@
 
     <Style x:Key="LabelTitleAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -53,7 +65,7 @@
 
     <Style x:Key="LabelHeaderAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -62,14 +74,14 @@
 
     <Style x:Key="LabelTextAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Black}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontSize" Value="15"/>
     </Style>
 
     <Style x:Key="AccentTextAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryText}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryText}, Dark={StaticResource PrimaryText}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -78,7 +90,7 @@
 
     <Style x:Key="AccentTitleTextAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryText}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryText}, Dark={StaticResource PrimaryText}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -87,7 +99,7 @@
 
     <Style x:Key="CaptionTextAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray400}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -96,7 +108,7 @@
 
     <Style x:Key="CaptionTitleAppearance" TargetType="Label">
         <Setter Property="VerticalTextAlignment" Value="Center"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource White}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray400}}" />
         <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="FontAttributes" Value="Bold"/>
         <Setter Property="FontFamily" Value="OpenSansSemibold"/>
@@ -105,21 +117,21 @@
 
     <Style x:Key="ChipGroupAppearance" TargetType="dxe:ChipGroup">
         <Setter Property="ChipPadding" Value="18,6"/>
-        <Setter Property="ChipTextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-        <Setter Property="ChipBorderColor" Value="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource White}}"/>
+        <Setter Property="ChipTextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="ChipBorderColor" Value="{AppThemeBinding Light={StaticResource PrimaryTransparent}, Dark={StaticResource PrimaryTransparent}}"/>
         <Setter Property="ChipCornerRadius" Value="16"/>
         <Setter Property="Padding" Value="0"/>
     </Style>
 
     <Style x:Key="ChipAppearance" TargetType="dxe:Chip">
         <Setter Property="Padding" Value="18,6"/>
-        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
-        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"/>
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}" />
+        <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"/>
         <Setter Property="CornerRadius" Value="16"/>
     </Style>
 
     <Style x:Key="DividerAppearance" TargetType="BoxView">
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource White}}"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}"/>
         <Setter Property="HeightRequest" Value="1" />
     </Style>
 

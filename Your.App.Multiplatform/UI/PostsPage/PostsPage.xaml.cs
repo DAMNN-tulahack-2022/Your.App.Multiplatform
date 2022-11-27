@@ -15,4 +15,8 @@ public partial class PostsPage : ContentPage {
         base.OnAppearing();
 		viewModel.FetchArticles();
     }
+
+	private async void OnAddClicked(object sender, EventArgs e) {
+		await Shell.Current.GoToAsync($"postcreate");
+	}
 }

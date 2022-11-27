@@ -12,12 +12,13 @@ public class PostsPageViewModel: ObservableModel {
         set => SetProperty(ref this.posts, value, nameof(Posts));
     }
 
-    public PostsPageViewModel() {
-    }
-
     public void FetchArticles() {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
-            .OnSuccess(result => Posts = result.Articles.ConvertAll(it => new PostItem(it, result.Users, result.Skills)))
+            .OnSuccess(result => {
+                var nonOrderedPosts = result.Articles.ConvertAll(it => new PostItem(it, result.Users, result.Skills));
+                nonOrderedPosts.Reverse();
+                Posts = nonOrderedPosts;
+            })
             .OnError(reason => {})
         );
     }
