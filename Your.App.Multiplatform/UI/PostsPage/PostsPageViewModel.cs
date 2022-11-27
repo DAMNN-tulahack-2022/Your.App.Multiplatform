@@ -13,7 +13,6 @@ public class PostsPageViewModel: ObservableModel {
     }
 
     public PostsPageViewModel() {
-        FetchArticles();
     }
 
     public void FetchArticles() {

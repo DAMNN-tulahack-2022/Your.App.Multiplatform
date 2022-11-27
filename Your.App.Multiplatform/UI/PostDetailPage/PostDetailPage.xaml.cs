@@ -2,10 +2,17 @@
 
 [QueryProperty(nameof(PostId), "post_id")]
 public partial class PostDetailPage : ContentPage {
-	public string PostId {get; set; }
+	private readonly PostDetailPageViewModel viewModel;
+	public int PostId { get; set; }
 
 	public PostDetailPage() {
+		viewModel = new PostDetailPageViewModel();
 		InitializeComponent();
-		BindingContext = new PostDetailPageViewModel(PostId);
+		BindingContext = viewModel;
 	}
+
+    protected override void OnAppearing() {
+        base.OnAppearing();
+		viewModel.FetchArticles(PostId);
+    }
 }

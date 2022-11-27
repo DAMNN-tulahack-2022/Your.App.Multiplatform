@@ -1,13 +1,18 @@
 ﻿namespace Your.App;
 
 public partial class PostsPage : ContentPage {
-	private PostsPageViewModel ViewModel;
+	private readonly PostsPageViewModel viewModel;
 
 	public PostsPage() {
-		ViewModel = new PostsPageViewModel();
+		viewModel = new PostsPageViewModel();
 		Title = Localization.Instance.GetString("title_page_posts");
 
 		InitializeComponent();
-		BindingContext = ViewModel;
+		BindingContext = viewModel;
 	}
+
+    protected override void OnAppearing() {
+        base.OnAppearing();
+		viewModel.FetchArticles();
+    }
 }

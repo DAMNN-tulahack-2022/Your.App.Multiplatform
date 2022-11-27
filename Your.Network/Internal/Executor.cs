@@ -1,6 +1,9 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Your.Network.Internal {
@@ -20,6 +23,14 @@ namespace Your.Network.Internal {
 
             using StreamReader reader = new StreamReader(stream);
             return await reader.ReadToEndAsync();
+        }
+
+        public async Task<string?> PostAsync(string uri, object body) {
+            HttpClient client = new HttpClient();
+            string json = JsonSerializer.Serialize(body);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await client.PostAsync(uri, httpContent);
+            return await httpResponse.Content.ReadAsStringAsync();
         }
 
         public void Dispose() { }

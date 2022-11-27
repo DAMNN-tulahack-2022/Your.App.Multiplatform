@@ -10,10 +10,12 @@
 
 		<ApplicationTitle>Your</ApplicationTitle>
 		<ApplicationId>com.damnn.your</ApplicationId>
+		<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
 		<ApplicationIdGuid>f1331e14-6baa-4f44-b9d9-6a5f89c93e24</ApplicationIdGuid>
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
+		
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>

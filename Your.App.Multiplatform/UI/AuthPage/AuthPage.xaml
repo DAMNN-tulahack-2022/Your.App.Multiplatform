@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:local="clr-namespace:Your.App"
+             x:Class="Your.App.AuthPage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}">
+
+    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+           Margin="0,160,0,0" HasShadow="False" CornerRadius="24">
+        <VerticalStackLayout>
+            <Label Text="Sign in" HorizontalTextAlignment="Center" Margin="0,32,0,8"
+                   Style="{StaticResource LabelHeaderAppearance}"/>
+            <Label Text="GitHub" HorizontalTextAlignment="Center"
+                   Style="{StaticResource CaptionTitleAppearance}" />
+
+            <dxe:TextEdit x:Name="loginField" PlaceholderText="GitHub user name" Margin="16,32,16,0" 
+                          BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource White}}" />
+
+            <Button Text="Sign in" Margin="48,32" Clicked="OnSignInClicked"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+        </VerticalStackLayout>
+    </Frame>
+
+</ContentPage>

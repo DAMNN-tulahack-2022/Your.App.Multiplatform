@@ -13,13 +13,16 @@ public class ProjectPageViewModel: ObservableModel {
     }
 
     public ProjectPageViewModel() {
-        FetchProjects();
     }
 
-    private void FetchProjects() {
+    public void FetchProjects(int userId) {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
-                Projects = new List<ProjectItem> { result.Projects.ConvertAll(it => new ProjectItem(it, result.Users, result.Skills)).FirstOrDefault() };
+                var project = result.Projects.FirstOrDefault(it => it.UsersIds?.Contains(userId) == true);
+                if (project == null)
+                    return;
+
+                Projects = new List<ProjectItem> { new ProjectItem(project, result.Users, result.Skills) };
             })
             .OnError(reason => {})
         );

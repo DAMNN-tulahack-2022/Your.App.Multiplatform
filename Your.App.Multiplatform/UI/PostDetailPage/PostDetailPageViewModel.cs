@@ -1,6 +1,7 @@
 using Your.Network.Models;
 using Your.Network.Handlers;
 using Database = Your.Network.Methods.Database;
+using Post = Your.Network.Methods.Post;
 using Your.Network;
 
 namespace Your.App;
@@ -18,25 +19,26 @@ public class PostDetailPageViewModel: ObservableModel {
         set => SetProperty(ref this.body, value, nameof(Body));
     }
 
-    public PostDetailPageViewModel(string id) {
-        FetchArticles(id);
-        MarkAsRead();
+
+    public int UserId => int.Parse(CredentialStorage.ReadToken());
+    public PostDetailPageViewModel() {
     }
 
-
-    private void MarkAsRead() {
+    private void MarkAsRead(int id) {
+         Api.Get(new Post.Read(id, UserId));
     }
     
-    private void FetchArticles(string id) {
+    public void FetchArticles(int id) {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
                 var posts = result.Articles.ConvertAll(it => new PostItem(it, result.Users, result.Skills));
                 var currentPost = posts.SingleOrDefault(p => p.Id.Equals(id));
 
-                Title = currentPost.Title;
-                Body = currentPost.Body;
+                Title = currentPost.Title ?? "";
+                Body = currentPost.Body ?? "";
             })
             .OnError(reason => {})
         );
+        MarkAsRead(id);
     }
 }

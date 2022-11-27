@@ -45,7 +45,7 @@ public class ProfilePageViewModel: ObservableModel {
     public ProfilePageViewModel() {
     }
 
-    public void FetchUsers(string id) {
+    public void FetchUsers(int id) {
         Api.Get(new Database.Get(), new ApiCallback<Data>()
             .OnSuccess(result => {
                 var user = result.Users.SingleOrDefault(u => u.Id.Equals(id));
@@ -53,7 +53,7 @@ public class ProfilePageViewModel: ObservableModel {
                 FullName = user.FullName;
                 Role = user.Role;
                 Experience = user.TotalExperience.ToString() + " exp";
-                ProjectCount = user.CompletedProjectsId.Count.ToString();
+                ProjectCount = user.CompletedProjectsId?.Count.ToString() ?? "0";
                 ReadCount = user.ViewedPostsIds.Count.ToString();
             })
             .OnError(reason => {})

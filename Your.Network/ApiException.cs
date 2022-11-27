@@ -12,9 +12,9 @@ namespace Your.Network {
         public ApiException(string message, Exception innerException) : base(message, innerException) {}
         public ApiException(string message) : base(message) {}
         public ApiException() {}
-        // public ApiException(ErrorResponse.Error error) { 
-        //     ErrorCode = error.ErrorCode;
-        //     ErrorMessage = error.ErrorMsg;
-        // }
+        public ApiException(Error error) {
+            ErrorCode = error.Code;
+            ErrorMessage = error.Message;
+        }
     }
 }

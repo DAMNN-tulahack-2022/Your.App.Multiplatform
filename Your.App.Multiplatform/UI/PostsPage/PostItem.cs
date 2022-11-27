@@ -3,7 +3,7 @@ using Your.Network.Models;
 namespace Your.App;
 
 public class PostItem {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string CreatorName { get; set; }
     public string CreatorPhoto { get; set; }
     public string Title { get; set; }

@@ -16,12 +16,12 @@ namespace Your.Network {
 
         /* Dirty response, may contain error from server */
         protected internal TResult OnServerResponseReceived(string response) {
-            //ErrorResponse error = JsonSerializer.Deserialize<ErrorResponse>(response)!;
+            Error error = JsonSerializer.Deserialize<Error>(response)!;
 
-            //if (error.InnerError == null)
+            if (error.Message == null)
                 return OnResponseSuccess(response);
 
-            //throw new ApiException(error.InnerError);
+            throw new ApiException(error);
         }
 
         /* Handled response, deserialize and pass */

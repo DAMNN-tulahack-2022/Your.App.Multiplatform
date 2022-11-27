@@ -1,13 +1,20 @@
 ﻿namespace Your.App;
 
 public partial class ProjectPage : ContentPage {
-	private readonly ProjectPageViewModel ViewModel;
+	private readonly ProjectPageViewModel viewModel;
+
+	public int UserId => int.Parse(CredentialStorage.ReadToken());
 
 	public ProjectPage() {
 		Title = Localization.Instance.GetString("title_page_project");
-		ViewModel = new ProjectPageViewModel();
+		viewModel = new ProjectPageViewModel();
 
 		InitializeComponent();
-		BindingContext = ViewModel;
+		BindingContext = viewModel;
 	}
+
+    protected override void OnAppearing() {
+        base.OnAppearing();
+		viewModel.FetchProjects(UserId);
+    }
 }
